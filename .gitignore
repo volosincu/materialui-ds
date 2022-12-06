@@ -1,0 +1,9 @@
+node_modules
+build
+tools/db.json
+dist
+*.history
+
+.vscode*
+coverage*
+yarn-error.log

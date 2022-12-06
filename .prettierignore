@@ -1,0 +1,8 @@
+
+dist/
+*.min.css
+*.min.js
+node_modules/
+manifest.json
+@types/
+.github/

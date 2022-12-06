@@ -1,0 +1,99 @@
+{
+  "version": "0.0.1",
+  "description": "",
+  "types": "dist/@types",
+  "main": "dist/materialui-ds.js",
+  "name": "materialui-ds",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "author": "Bogdan Volosicu",
+  "testMatch": [
+    "**/__tests__/**/*.+(ts|tsx|js)",
+    "**/?(*.)+(spec|test).+(ts|tsx|js)"
+  ],
+  "scripts": {
+    "clean": "rimraf ./dist/*",
+    "lint": "eslint ./src/* --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "bundle": "webpack --stats-error-details --progress --config webpack.config.js",
+    "build": "run-p -n clean lint:fix bundle",
+    "test:one": "jest --color --testNamePattern=",
+    "test:all": "jest --color --coverage"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^27.0.0",
+    "@types/prop-types": "^15.7.4",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@types/react-redux": "^7.1.18",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.0.7",
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-webpack-plugin": "^3.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.2",
+    "http-server": "^14.1.0",
+    "jest": "^27.0.6",
+    "jest-css-modules-transform": "^4.4.2",
+    "jsdom": "^16.6.0",
+    "jsdom-global": "^3.0.2",
+    "mini-css-extract-plugin": "^2.6.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-loader": "^6.1.1",
+    "prettier": "^2.3.2",
+    "react-test-renderer": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "source-map-loader": "^4.0.1",
+    "style-loader": "^3.2.1",
+    "ts-jest": "^27.0.4",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5",
+    "webpack": "^5.50.0",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^5.0.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.16",
+    "@mui/styles": "^5.10.16",
+    "react": "^18.2.0"
+  },
+  "files": [
+    "src",
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "dist/@types",
+    "dist/package.json"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/@types",
+      "require": "./dist/materialui-ds.js",
+      "import": "./dist/materialui-ds.js"
+    },
+    "./dist/*": "./dist/*"
+  }
+}
