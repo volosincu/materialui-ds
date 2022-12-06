@@ -87,7 +87,8 @@
     "dist/**/*.js",
     "dist/**/*.js.map",
     "dist/@types",
-    "dist/package.json"
+    "dist/package.json",
+    "README.md"
   ],
   "engines": {
     "node": ">=16.0.0",
