@@ -7,6 +7,11 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/volosincu/materialui-ds.git"
+  },
+  "homepage": "https://github.com/volosincu/materialui-ds#readme",
   "author": "Bogdan Volosicu",
   "testMatch": [
     "**/__tests__/**/*.+(ts|tsx|js)",
