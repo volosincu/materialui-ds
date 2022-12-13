@@ -1,8 +1,8 @@
 {
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
-  "types": "dist/@types",
-  "main": "dist/materialui-ds.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "name": "materialui-ds",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
@@ -18,13 +18,14 @@
     "**/?(*.)+(spec|test).+(ts|tsx|js)"
   ],
   "scripts": {
-    "clean": "rimraf ./dist/*",
-    "lint": "eslint ./src/* --ext .ts",
+    "clean": "rimraf ./lib",
+    "lint": "eslint ./components/* --ext .ts",
     "lint:fix": "npm run lint -- --fix",
     "bundle": "webpack --stats-error-details --progress --config webpack.config.js",
-    "build": "run-p -n clean lint:fix bundle",
+    "build": "run-s -n clean lint:fix bundle copy:types",
     "test:one": "jest --color --testNamePattern=",
-    "test:all": "jest --color --coverage"
+    "test:all": "jest --color --coverage",
+    "copy:types": "node ./build-copy.mjs --in ./components/index.d.ts --out ./lib/index.d.ts"
   },
   "license": "ISC",
   "devDependencies": {
@@ -50,6 +51,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-webpack-plugin": "^3.2.0",
     "file-loader": "^6.2.0",
+    "fs-extra": "^11.1.0",
     "html-webpack-plugin": "^4.5.2",
     "http-server": "^14.1.0",
     "jest": "^27.0.6",
@@ -83,12 +85,8 @@
     "react": "^18.2.0"
   },
   "files": [
-    "src",
-    "dist/**/*.js",
-    "dist/**/*.js.map",
-    "dist/@types",
-    "dist/package.json",
-    "README.md"
+    "lib/**/*",
+    "package.json"
   ],
   "engines": {
     "node": ">=16.0.0",
@@ -96,10 +94,10 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/@types",
-      "require": "./dist/materialui-ds.js",
-      "import": "./dist/materialui-ds.js"
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
     },
-    "./dist/*": "./dist/*"
-  }
+    "./package.json": "./package.json"
+  },
+  "type": "commonjs"
 }

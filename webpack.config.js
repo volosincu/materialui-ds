@@ -8,14 +8,13 @@ process.env.NODE_ENV = 'production';
 
 module.exports = {
   entry: {
-    app: './src/main.ts',
+    index: './components/DesignSystem.ts',
   },
   target: 'web',
   mode: 'production',
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'materialui-ds.js',
+    path: path.resolve(__dirname, 'lib'),
     library: {
       name: 'materialui-ds',
       type: 'umd',
@@ -91,6 +90,5 @@ module.exports = {
       emitWarning: true,
       failOnError: true,
     }),
-
   ],
 };

@@ -1,7 +1,7 @@
 node_modules
 build
 tools/db.json
-dist
+lib
 *.history
 
 .vscode*
