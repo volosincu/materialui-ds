@@ -3,7 +3,7 @@ import { JourneyDesignerType } from './JourneyDesigner';
 
 type ThemeMode = 'light' | 'dark';
 
-declare module '@fintechos-com/ftos-design-system' {
+declare module 'materialui-ds' {
   export function getMode(): ThemeMode;
   export const Base: BaseType;
   export const JourneyDesigner: JourneyDesignerType;
