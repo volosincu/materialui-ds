@@ -48,13 +48,11 @@ export default function UploadComponent(props: UploadComponentPropTypes) {
   const { onErr, onChange, label } = props;
   const [dragOn, setDragOn] = useState(false);
 
-  const onDragEnter = useCallback((ev: any) => {
-    console.log('onDragEnter', ev);
+  const onDragEnter = useCallback(() => {
     setDragOn(true);
   }, []);
 
-  const onDragLeave = useCallback((ev: any) => {
-    console.log('onDragLeave', ev);
+  const onDragLeave = useCallback(() => {
     setDragOn(false);
   }, []);
 
@@ -68,20 +66,15 @@ export default function UploadComponent(props: UploadComponentPropTypes) {
     onErr(ev[0].errors);
   }, []);
 
-  const { isDragReject, isDragAccept, acceptedFiles, getRootProps, getInputProps } =
-    useDropzone({
-      onDragLeave,
-      onDragEnter,
-      onDropAccepted,
-      onDropRejected,
-      multiple: false,
-      maxSize: 250000,
-      maxFiles: 1,
-    });
-
-  console.log(isDragReject, isDragAccept);
-
-  acceptedFiles.map((file: any) => console.log(file.path));
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+    onDragLeave,
+    onDragEnter,
+    onDropAccepted,
+    onDropRejected,
+    multiple: false,
+    maxSize: 250000,
+    maxFiles: 1,
+  });
 
   const files = acceptedFiles.map((file: any) => (
     <FileItem key={file.name}>
