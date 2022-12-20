@@ -1,6 +1,8 @@
 import { FtosDesign, ThemeMode, DesignSystem } from '.';
 import Base from './Base';
 import JourneyDesigner from './JourneyDesigner';
+import Common from './Common';
+import UploadComponent from './Common/UploadComponent';
 
 function getMode(): ThemeMode {
   return 'light';
@@ -8,4 +10,11 @@ function getMode(): ThemeMode {
 
 export * from './Base';
 export * from './JourneyDesigner';
-export default { getMode, Base, JourneyDesigner } as DesignSystem<FtosDesign>;
+export * from './Common';
+export default {
+  getMode,
+  Base,
+  JourneyDesigner,
+  Common,
+  UploadComponent,
+} as DesignSystem<FtosDesign>;
