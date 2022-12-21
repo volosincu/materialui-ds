@@ -30,20 +30,22 @@ Install released version
 
 Usage examples:
 
-<pre>
-  import DesignSystem from '@fintechos-com/ftos-design-system';
+<code>
+  import DesignSystem from 'materialui-ds';
   
   DesignSystem.getMode()
-</pre>
+</code>
 
-<pre>
-  import { Base } from '@fintechos-com/ftos-design-system';
+<code>
+  import { Base } from 'materialui-ds';
   
   <Base.FtosButton>Send mail</Base.FtosButton>
-</pre>
+</code>
 
-<pre>
-  import { JourneyDesigner: { JDButton } } from '@fintechos-com/ftos-design-system';
-  
-  <JDButton>Send mail</JDButton>
-</pre>
+<code>
+  import DesignSystem from 'materialui-ds';
+  <DesignSystem.UploadComponent
+      onErr={onErr}
+      onChange={handleUpload}
+    />
+</code>
