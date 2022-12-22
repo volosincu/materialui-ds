@@ -46,6 +46,8 @@ export const baseTheme = createTheme({
       disabled: '#C9CED4',
     },
   },
+  
+
   typography: {
     fontFamily: 'Inter',
     fontSize: 16,
@@ -202,11 +204,10 @@ export const baseTheme = createTheme({
     MuiButtonGroup: {
       styleOverrides: {
         root: {
-          borderRadius: '6px',
           backgroundColor: '#FAFBFB',
           padding: '4px',
           boxShadow: 'none',
-         
+          borderRadius: '6px',
         },
 
 
@@ -218,16 +219,19 @@ export const baseTheme = createTheme({
             border: 'none',
           },
 
+          "&:nth-child(n)": {
+            borderRadius: '6px'
+          },
+
           '&:hover': {
             color: '#000000'
           },
 
-          '& .span': {
+          '& .active': {
             boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.05)',
             backgroundColor: '#ffffff',
             border: ' 1px solid #C9CED4',
           },
-
 
           '&:focus': {
             color: '#105AC9',
@@ -249,6 +253,8 @@ export const baseTheme = createTheme({
         },
       },
     },
+
+
     MuiAvatar: {
       styleOverrides: {
         root: {
