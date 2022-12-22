@@ -1,10 +1,8 @@
 import React from 'react';
 import lib from 'materialui-ds';
-import { Padding } from '@mui/icons-material';
-import { Card } from '@mui/material';
 
 console.clear();
-// console.log(lib)
+console.log(lib)
 
 function App() {
   return (
@@ -41,9 +39,9 @@ function App() {
     <h2>Icons</h2>
 
     
-    <lib.Base.FtosIconButton  color= "primary">home</lib.Base.FtosIconButton> <span></span>
-    <lib.Base.FtosIconButton color= "secondary">Home</lib.Base.FtosIconButton> <span></span>
-    <lib.Base.FtosIconButton color= "error">Home</lib.Base.FtosIconButton> <span></span>
+    <lib.Base.FtosIconButton  color= "primary">&#x2686;</lib.Base.FtosIconButton> <span></span>
+    <lib.Base.FtosIconButton color= "secondary">&#x2686;</lib.Base.FtosIconButton> <span></span>
+    <lib.Base.FtosIconButton color= "error">&#x2686;</lib.Base.FtosIconButton> <span></span>
 
     
 
@@ -55,8 +53,8 @@ function App() {
       <h2>Button Group</h2>
 
       <lib.Base.FtosButtonGroup  aria-label=" button group">
-        <lib.Base.FtosButton>One</lib.Base.FtosButton>
-        <lib.Base.FtosButton>Two</lib.Base.FtosButton>
+        <lib.Base.FtosButton variant="text">One</lib.Base.FtosButton>
+        <lib.Base.FtosButton variant="text">Two</lib.Base.FtosButton>
         <lib.Base.FtosButton>Three</lib.Base.FtosButton>
       </lib.Base.FtosButtonGroup>
 
@@ -66,9 +64,9 @@ function App() {
     <p>Full width</p>
 
     <lib.Base.FtosButtonGroup  fullWidth={true} aria-label=" button group">
-      <lib.Base.FtosButton>One</lib.Base.FtosButton>
+      <lib.Base.FtosButton variant="text">One</lib.Base.FtosButton>
       <lib.Base.FtosButton>Two</lib.Base.FtosButton>
-      <lib.Base.FtosButton>Three</lib.Base.FtosButton>
+      <lib.Base.FtosButton variant="text">Three</lib.Base.FtosButton>
     </lib.Base.FtosButtonGroup>
 
     <br></br>
@@ -76,11 +74,11 @@ function App() {
 
     <h2>Card</h2>
 
-    <lib.Base.FtosCard><h6>This is a title</h6><p>Start from scratch. Drag and drop widgets to build your journey.</p></lib.Base.FtosCard>
+    <lib.Base.FtosCard><h3>This is a title</h3><p>Start from scratch. Drag and drop widgets to build your journey.</p></lib.Base.FtosCard>
     <br></br>
     <br></br>
 
-    <lib.Base.FtosCard disabled><h6>This is a title</h6><p>Start from scratch. Drag and drop widgets to build your journey.</p></lib.Base.FtosCard>
+    
   
     
      

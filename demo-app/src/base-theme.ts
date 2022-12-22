@@ -212,30 +212,40 @@ export const baseTheme = createTheme({
 
 
         grouped: {
-          color: '#697082',
+          color: '#000000',
           borderRadius: '6px',
-          '&, &:hover, &:active, &:focus': {
-            backgroundColor: 'transparent',
-            border: 'none',
-          },
-
-          "&:nth-child(n)": {
-            borderRadius: '6px'
-          },
-
-          '&:hover': {
-            color: '#000000'
-          },
-
-          '& .active': {
-            boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.05)',
-            backgroundColor: '#ffffff',
-            border: ' 1px solid #C9CED4',
-          },
+          backgroundColor: '#ffffff',
 
           '&:focus': {
-            color: '#105AC9',
+            boxShadow: 'none'
+          },
+          '&:hover, &:active': {
+            filter: 'none'
+          },
 
+          '&.MuiButton-text':{
+            color: '#697082',
+            '&, &:hover, &:active, &:focus':{
+              backgroundColor: 'transparent'
+            },
+
+            '&:hover': {
+              color: '#000000',
+            },
+  
+            '&:focus': {
+              color: '#105AC9',
+              boxShadow: 'none',
+  
+            },
+
+          },
+        
+          "&:nth-child(n)": {
+            borderRadius: '6px',
+            '&, &:hover': {
+              borderColor:'#C9CED4'
+            },
           },
         }
       },
