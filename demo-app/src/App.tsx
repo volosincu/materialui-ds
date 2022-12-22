@@ -35,6 +35,18 @@ function App() {
       <lib.Base.FtosButton variant="contained">Default</lib.Base.FtosButton> <span></span>
       <lib.Base.FtosButton variant="contained" size='large'>Large</lib.Base.FtosButton> <span></span>
 
+      <br></br>
+      <br></br>
+
+    <h2>Icons</h2>
+
+    
+    <lib.Base.FtosIconButton  color= "primary">home</lib.Base.FtosIconButton> <span></span>
+    <lib.Base.FtosIconButton color= "secondary">Home</lib.Base.FtosIconButton> <span></span>
+    <lib.Base.FtosIconButton color= "error">Home</lib.Base.FtosIconButton> <span></span>
+
+    
+
     
 
       <br></br>
@@ -43,10 +55,10 @@ function App() {
       <h2>Button Group</h2>
 
       <lib.Base.FtosButtonGroup  aria-label=" button group">
-      <lib.Base.FtosButton>One</lib.Base.FtosButton>
-      <lib.Base.FtosButton>Two</lib.Base.FtosButton>
-      <lib.Base.FtosButton>Three</lib.Base.FtosButton>
-    </lib.Base.FtosButtonGroup>
+        <lib.Base.FtosButton>One</lib.Base.FtosButton>
+        <lib.Base.FtosButton>Two</lib.Base.FtosButton>
+        <lib.Base.FtosButton>Three</lib.Base.FtosButton>
+      </lib.Base.FtosButtonGroup>
 
     <br></br>
     <br></br>
@@ -63,6 +75,13 @@ function App() {
     <br></br>
 
     <h2>Card</h2>
+
+    <lib.Base.FtosCard><h6>This is a title</h6><p>Start from scratch. Drag and drop widgets to build your journey.</p></lib.Base.FtosCard>
+    <br></br>
+    <br></br>
+
+    <lib.Base.FtosCard disabled><h6>This is a title</h6><p>Start from scratch. Drag and drop widgets to build your journey.</p></lib.Base.FtosCard>
+  
     
      
     </div>
