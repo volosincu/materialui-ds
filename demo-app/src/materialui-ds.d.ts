@@ -1,1 +1,5 @@
-declare module "materialui-ds"
+declare module 'materialui-ds' {
+  interface Palette {
+    tertiary: Palette['tertiary'];
+  }
+}
