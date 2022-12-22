@@ -1,5 +1,5 @@
 //import { DisabledByDefault } from '@mui/icons-material';
-import { createTheme } from '@mui/material';
+import { ButtonGroup, createTheme, getTouchRippleUtilityClass, ToggleButton, touchRippleClasses } from '@mui/material';
 
 export const baseTheme = createTheme({
   palette: {
@@ -117,80 +117,80 @@ export const baseTheme = createTheme({
         root: {
           height: '32px',
           lineHeight: '1.2em',
-          borderRadius: '8px',
+          borderRadius: '6px',
           textTransform: 'capitalize',
+          minWidth: 'fit-content',
+          padding: ' 0 8px',
+
           '&:hover': {
+            filter: 'brightness(0.95)',
+          },
+          
+          '&:active': {
             filter: 'brightness(0.9)',
           },
-          '&:active': {
-            filter: 'brightness(0.85)',
-          },
+
           '&:focus': {
             boxShadow: '0px 0px 0px 2px #3299ff',
           },
+
           '&.Mui-disabled': {
             backgroundColor: '#fafbfb',
             border: '1px solid #eaecee',
           },
         },
+
         sizeSmall: {
           height: '24px',
+          padding: '0 4px',
         },
+
         sizeLarge: {
           height: '40px',
+          padding: '0 16px',
         },
+
         contained: {
           '&, &:hover, &:active': {
             boxShadow: 'none',
+            border: '1px solid #105AC9',
+            backgroundColor: '#0066FF',
           },
-          '&.Mui-disabled': {
-            backgroundColor: '#fafbfb',
-            border: '1px solid #eaecee',
+
+        },
+
+        containedError: {
+          '&, &:hover, &:active': {
+            backgroundColor: '#B42318',
+            borderColor: '#B42318'
+          }
+
+        },
+
+        outlined: {
+          '&, &:hover, &:active': {
+            border: '1px solid #c9ced4',
+            color: '#000000',
+            backgroundColor: '#fafbfb'
+
           },
         },
-        containedSecondary: {
-          border: '1px solid #c9ced4',
-          '&:hover': {
-            backgroundColor: '#fafbfb',
-          },
-        },
-        containedPrimary: {
-          border: '1px solid #105AC9',
-          backgroundColor: '#2b68ee',
-          '&:hover': {
-            backgroundColor: '#2c68ee',
-          },
-        },
-        outlinedPrimary: {
-          '&:hover': {
-            backgroundColor: 'rgba(0, 0, 0, 0.04)',
-          },
-        },
-        outlinedSecondary: {
-          color: '#000000',
-          borderColor: '#c9ced4',
-          '&:hover, &:active': {
-            backgroundColor: 'rgba(0, 0, 0, 0.04)',
-            borderColor: 'rgba(0, 0, 0, 0.23)',
-          },
-        },
-        textSecondary: {
-          color: '#000000',
-          '&:hover, &:active': {
-            backgroundColor: 'rgba(0, 0, 0, 0.04)',
-          },
-        },
-        textPrimary: {
+        
+        text: {
           '&:hover': {
             backgroundColor: '#3299ff',
             filter: 'none',
           },
+
           '&:hover, &:active, &:focus': {
             color: '#ffffff',
           },
+
           '&:active': {
-            filter: 'brightness(0.9)',
+            backgroundColor: '#287acc',
+            filter: 'none',
           },
+          
           '&:focus': {
             backgroundColor: '#3299ff',
             boxShadow: '0px 0px 0px 2px #287acc',
@@ -198,6 +198,45 @@ export const baseTheme = createTheme({
         },
       },
     },
+
+    MuiButtonGroup: {
+      styleOverrides: {
+        root: {
+          borderRadius: '6px',
+          backgroundColor: '#FAFBFB',
+          padding: '4px',
+          boxShadow: 'none',
+         
+        },
+
+
+        grouped: {
+          color: '#697082',
+          borderRadius: '6px',
+          '&, &:hover, &:active, &:focus': {
+            backgroundColor: 'transparent',
+            border: 'none',
+          },
+
+          '&:hover': {
+            color: '#000000'
+          },
+
+          '& span': {
+            boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.05)',
+            backgroundColor: '#ffffff',
+            border: ' 1px solid #C9CED4',
+          },
+
+
+          '&:focus': {
+            color: '#105AC9',
+
+          },
+        }
+      },
+    },
+
     MuiCard: {
       styleOverrides: {
         root: {
@@ -667,19 +706,7 @@ export const baseTheme = createTheme({
         },
       },
     },
-    MuiButtonGroup: {
-      styleOverrides: {
-        root: {
-          color: '#697082',
-          '&:hover': {
-            color: '#000000',
-          },
-          '&:focus': {
-            color: '#105AC9',
-          },
-        },
-      },
-    },
+  
     MuiTablePagination: {
       styleOverrides: {
         root: {
