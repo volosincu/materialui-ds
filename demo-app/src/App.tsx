@@ -1,6 +1,7 @@
 import React from 'react';
 import lib from 'materialui-ds';
 import { Padding } from '@mui/icons-material';
+import { Card } from '@mui/material';
 
 console.clear();
 // console.log(lib)
@@ -57,6 +58,13 @@ function App() {
       <lib.Base.FtosButton>Two</lib.Base.FtosButton>
       <lib.Base.FtosButton>Three</lib.Base.FtosButton>
     </lib.Base.FtosButtonGroup>
+
+    <br></br>
+    <br></br>
+
+    <h2>Card</h2>
+    
+     
     </div>
   );
 }

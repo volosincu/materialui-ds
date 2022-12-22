@@ -222,7 +222,7 @@ export const baseTheme = createTheme({
             color: '#000000'
           },
 
-          '& span': {
+          '& .span': {
             boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.05)',
             backgroundColor: '#ffffff',
             border: ' 1px solid #C9CED4',
