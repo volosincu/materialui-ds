@@ -4,7 +4,7 @@ import FtosAccordionDetails from './FtosAccordionDetails';
 import FtosAccordionSummary from './FtosAccordionSummary';
 import FtosAlert from './FtosAlert';
 import FtosAvatar from './FtosAvatar';
-import FtosBadge from './FtosBadge';
+import FtosAvatarGroup from './FtosAvatarGroup';
 import FtosBreadcrumbs from './FtosBreadcrumbs';
 import FtosButton from './FtosButton';
 import FtosButtonGroup from './FtosButtonGroup';
@@ -20,6 +20,7 @@ import FtosLink from './FtosLink';
 import FtosPagination from './FtosPagination';
 import FtosPopover from './FtosPopover';
 import FtosRadio from './FtosRadio';
+import FtosRadioGroup from './FtosRadioGroup';
 import FtosSelect from './FtosSelect';
 import FtosSwitch from './FtosSwitch';
 import FtosTab from './FtosTab';
@@ -38,7 +39,7 @@ const Base = {
   FtosAccordionSummary,
   FtosAlert,
   FtosAvatar,
-  FtosBadge,
+  FtosAvatarGroup,
   FtosBreadcrumbs,
   FtosButton,
   FtosButtonGroup,
@@ -54,6 +55,7 @@ const Base = {
   FtosPagination,
   FtosPopover,
   FtosRadio,
+  FtosRadioGroup,
   FtosSelect,
   FtosSwitch,
   FtosTab,
