@@ -1,5 +1,12 @@
 //import { DisabledByDefault } from '@mui/icons-material';
 import { createTheme } from '@mui/material/styles';
+// import InterWoffRegular from '../../fonts/Inter-Regular.woff';
+
+let InterWoffRegular = "../src/fonts/Inter-Regular.woff";
+let InterWoffMedium = "../src/fonts/Inter-Medium.woff";
+let InterWoffSemiBold = "../src/fonts/Inter-SemiBold.woff";
+let InterWoffBold = "../src/fonts/Inter-Bold.woff";
+
 declare module '@mui/material/styles' {
   interface Palette {
     tertiary: Palette['primary'];
@@ -24,7 +31,7 @@ declare module '@mui/material/Typography' {
 }
 
 export let ftosTheme = createTheme({ 
-
+  
   palette: {
     //new vars
     tertiary: {
@@ -70,7 +77,19 @@ export let ftosTheme = createTheme({
   
 
   typography: {
-    fontFamily: 'Inter',
+    fontFamily: [
+      'Inter',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
     fontSize: 16,
     fontWeightLight: 300,
 
@@ -121,6 +140,42 @@ export let ftosTheme = createTheme({
 //   shadowL: '0px 1px 16px rgba(0, 0, 0, 0.2)',
 
   components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        @font-face {
+          font-family: 'Inter';
+          font-style: normal;
+          font-display: swap;
+          font-weight: 400;
+          src: local('Inter'), local('Inter-Regular'), url(${InterWoffRegular}) format('woff');
+          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+        };
+        @font-face {
+          font-family: 'Inter';
+          font-style: normal;
+          font-display: swap;
+          font-weight: 500;
+          src: local('Inter'), local('Inter-Medium'), url(${InterWoffMedium}) format('woff');
+          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+        };
+        @font-face {
+          font-family: 'Inter';
+          font-style: normal;
+          font-display: swap;
+          font-weight: 400;
+          src: local('Inter'), local('Inter-SemiBold'), url(${InterWoffSemiBold}) format('woff');
+          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+        };
+        @font-face {
+          font-family: 'Inter';
+          font-style: normal;
+          font-display: swap;
+          font-weight: 400;
+          src: local('Inter'), local('Inter-Bold'), url(${InterWoffBold}) format('woff');
+          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+        }
+      `,
+    },
     MuiButton: {
       styleOverrides: {
         root: {
