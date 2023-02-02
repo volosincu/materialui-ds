@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 type CssProps = {
   [key: string]: string | boolean | number;
@@ -47,26 +47,38 @@ export type UploadComponentPropTypes = PropTypes.InferProps<typeof UploadTypes>;
 export default function UploadComponent(props: UploadComponentPropTypes) {
   const { onErr, onChange, label } = props;
   const [dragOn, setDragOn] = useState(false);
+  const [noClick, setNoClick] = useState(false);
 
-  const onDragEnter = useCallback(() => {
-    setDragOn(true);
-  }, []);
+  const [files, setFiles] = useState([]);
+
+  const onDragEnter = useCallback(
+    (acceptedFiles: any) => {
+      setDragOn(true);
+      setFiles(acceptedFiles);
+    },
+    [files],
+  );
 
   const onDragLeave = useCallback(() => {
     setDragOn(false);
   }, []);
 
-  const onDropAccepted = useCallback((files: any) => {
-    setDragOn(false);
-    onChange(files);
-  }, []);
+  const onDropAccepted = useCallback(
+    (filesAcc: any) => {
+      setDragOn(false);
+      setNoClick(true);
+      onChange(filesAcc);
+      setFiles(filesAcc);
+    },
+    [files],
+  );
 
   const onDropRejected = useCallback((ev: any) => {
     setDragOn(false);
     onErr(ev[0].errors);
   }, []);
 
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     onDragLeave,
     onDragEnter,
     onDropAccepted,
@@ -74,9 +86,10 @@ export default function UploadComponent(props: UploadComponentPropTypes) {
     multiple: false,
     maxSize: 250000,
     maxFiles: 1,
+    noClick,
   });
 
-  const files = acceptedFiles.map((file: any) => (
+  const fsItem = files.map((file: any) => (
     <FileItem key={file.name}>
       <div
         style={{
@@ -88,34 +101,43 @@ export default function UploadComponent(props: UploadComponentPropTypes) {
       >
         {file.name}
       </div>
-      <button
-        style={{
-          display: 'inline-block',
-          width: '20px',
-          position: 'relative',
-          top: '-5px',
-          padding: '0px 1px 0px 0px',
-          borderRadius: '10px',
-          border: 'none',
-          height: '19px',
-        }}
-        type="button"
-      >
-        x
-      </button>
     </FileItem>
   ));
 
   return (
-    <div {...getRootProps()}>
-      <input {...getInputProps()} />
-      {acceptedFiles && acceptedFiles.length === 0 ? (
-        <MuiLabel highlight={dragOn}>
-          {label || 'Drag and drop some files here, or click to select files'}
-        </MuiLabel>
-      ) : (
-        <ul>{files}</ul>
+    <Box sx={{ position: 'relative' }}>
+      {noClick && (
+        <button
+          style={{
+            position: 'absolute',
+            width: '20px',
+            top: '3px',
+            right: '6px',
+            padding: '0px 1px 0px 0px',
+            borderRadius: '10px',
+            border: 'none',
+            height: '19px',
+            zIndex: '15',
+          }}
+          type="button"
+          onClick={() => {
+            setFiles([]);
+            setNoClick(false);
+          }}
+        >
+          x
+        </button>
       )}
-    </div>
+      <div {...getRootProps()}>
+        <input {...getInputProps()} />
+        {files && files.length === 0 ? (
+          <MuiLabel highlight={dragOn}>
+            {label || 'Drag and drop some files here, or click to select files'}
+          </MuiLabel>
+        ) : (
+          <ul>{fsItem}</ul>
+        )}
+      </div>
+    </Box>
   );
 }
